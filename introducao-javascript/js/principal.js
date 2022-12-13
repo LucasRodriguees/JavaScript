@@ -16,10 +16,26 @@
 
 			var altura = tdaltura.textContent;
 
-			var imc = peso / (altura * altura); // 100 / 2.0 x 2.0 = 100 / 4 = 25
-
 				// selecionando a coluna do IMC
 			var tdImc = document.querySelector(".info-imc");
 
-			tdImc.textContent = imc; 
+			var pesoEhValido = true;
+			var alturaEhValida = true;
 
+			if (peso <= 0 || peso >= 1000){
+				console.log("peso inválido");
+				pesoEhValido = false;
+				tdImc.textContent = "peso inválido"
+			}
+
+			if (altura <= 0 || altura >= 3.00){
+				console.log("altura inválida")
+				alturaEhValida = false;
+				tdImc.textContent = "altura inválida"
+			}
+
+			if(pesoEhValido && alturaEhValida){
+				var imc = peso / (altura * altura); 
+				tdImc.textContent = imc; 
+			}
+			
