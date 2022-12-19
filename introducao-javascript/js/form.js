@@ -5,8 +5,12 @@
 
 				var form = document.querySelector("#form-adiciona");
 				//Extraindo informacoes do paciente do form
-				var paciente = obtemPacienteDoFormulario(form);
-				console.log(paciente)
+				var paciente = obtemPacienteDoFormulario(form);	
+
+				if(!validaPaciente(paciente)){
+					console.log("paciente invalido");
+					return;
+				}
 
 				//cria a tr ea td do paciente
 				var pacienteTr = montaTr(paciente);
@@ -53,4 +57,13 @@
 				td.classList.add(classe);
 
 				return td;
+			}
+
+			function validaPaciente(paciente) {
+				if(validaPeso(paciente.peso)){
+					return true;
+				}else{
+					return false;
+				}
+				
 			}
