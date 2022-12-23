@@ -10,9 +10,6 @@
 	</head>
 	<body>
 
-		
-		
-
 		<header>
 			<div class="container">
 				<h1 class="titulo">Aparecida Nutrição</h1>
@@ -21,6 +18,8 @@
 		<main>
 			<section class="container">
 				<h2>Meus pacientes</h2>
+				<label for="filtrar-tabela">Filtre:</label>
+				<input type="text" name="filtre" id="filtrar-tabela" placeholder="Digite o nome do paciente">
 				<table>
 					<thead>
 						<tr>
@@ -102,11 +101,10 @@
     </form>
 </section>
 
-		<script src="js/calcula-imc.js"></script>
-				<script src="js/form.js"></script>
-					<script src="js/remover-paciente.js"></script>
-
-
+			<script src="js/calcula-imc.js"></script>
+			<script src="js/form.js"></script>
+			<script src="js/remover-paciente.js"></script>
+			<script src="js/filtra.js"></script>
 
 	</body>
 </html>
