@@ -3,10 +3,16 @@ botaoAdicionar.addEventListener("click", function(){
 	console.log(botaoAdicionar);
 	var xhr = new XMLHttpRequest();
 
-	xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
+	xhr.open("GET", "https://raw.githubusercontent.com/mmgcnerds/api-pacientes/main/api-pacientes.json");
 
 		xhr.addEventListener("load", function(){
-			console.log(xhr.responseText);
+			var resposta = xhr.responseText;
+
+			var pacientes = JSON.parse(resposta);
+			
+			pacientes.forEach(function (paciente){
+				adicionaPacienteNaTabela(paciente);
+			}); 
 		});
 
 		xhr.send();
